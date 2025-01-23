@@ -1,0 +1,142 @@
+/* style.css */
+/* ===== 基础样式 ===== */
+:root {
+    --primary-color: #2c3e50;       /* 深蓝灰 */
+    --secondary-color: #3498db;     /* 学术蓝 */
+    --accent-color: #7f8c8d;        /* 浅灰 */
+    --background-color: #f9f9f9;    /* 浅白背景 */
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* ===== 标题排版 ===== */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin: 2rem 0 1.5rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    margin: 1.8rem 0 1rem;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin: 1.5rem 0 0.8rem;
+}
+
+/* ===== 导航栏 ===== */
+.nav {
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nav a {
+    margin-right: 2rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.nav a:hover {
+    color: var(--secondary-color);
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.2s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== 内容区块 ===== */
+.section {
+    background: white;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 2.5rem;
+}
+
+p {
+    margin: 1rem 0;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* ===== 联系信息 ===== */
+.contact {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.contact a {
+    margin: 0 1.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact a:hover {
+    color: var(--secondary-color);
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav a {
+        margin-right: 1.2rem;
+        display: block;
+        margin-bottom: 0.8rem;
+    }
+
+    .section {
+        padding: 1.5rem;
+    }
+}
+
+/* ===== PDF 链接样式 ===== */
+a[href$=".pdf"]::after {
+    content: " (PDF)";
+    font-size: 0.8em;
+    color: var(--accent-color);
+    margin-left: 0.3rem;
+}
